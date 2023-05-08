@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>This is my root page</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/pure-min.css" integrity="sha384-X38yfunGUhNzHpBaEBsWLO+A0HDYOQi8ufWDkZ0k9e0eXz/tH3II7uKZ9msv++Ls" crossorigin="anonymous">
+</head>
+<h1>Hello!</h1>
+<body>
+    <div>
+        <p>Please enter your name.</p>
+
+        <form class="pure-form" method="POST" action="/">
+            Enter your weight(kg):<br>
+            <input type="text" name="weight"><br>
+            Enter your height(cm):<br>
+            <input type="text" name="height"><br>
+            <button type="submit" class="pure-button pure-button-primary" value="Submit">Submit</button>
+        </form>
+    </div>
+    <br>
+
+    <div>
+        {% if name %}
+            <p>We have a result - {{ name }}!</p>
+        {% endif %}
+    </div>
+
+</body>
+</html>
